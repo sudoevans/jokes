@@ -5,6 +5,7 @@ try:
 
     jokes=['\n']
     joke_number=0
+    
 
 #Loading Jokes
     def preload_jokes():
@@ -12,7 +13,8 @@ try:
         for i in range(5):
             noris_joke=requests.get(api).json()
             jokes.append(noris_joke)
-        print(jokes)
+        for i in jokes:
+              print("✔",i)
         
 
 #calling the Function
@@ -20,5 +22,5 @@ try:
     print('Jokes Done Loading!')
     
 except ConnectionError as e:
-    print("Sorry No InterNet ")
+    print("Sorry No InterNet Connection ")
 
